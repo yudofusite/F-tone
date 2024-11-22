@@ -57,7 +57,7 @@ mainc.width = mainc.height * 0.5;	//キャンバス横幅設定
 mainc.setAttribute("width","250px");
 mainc.setAttribute("height","500px");
 let main = mainc.getContext("2d");
-addEventListener("keydown",function() {
+addEventListener("click",function() {
 	console.log("fullScreen");
 	document.body.requestFullscreen();
 });
