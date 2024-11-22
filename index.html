@@ -30,19 +30,26 @@ a {
   height: 100vh;
   transition: 0.2s;
 }
+.center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
 .mainf {
   position: relative;
-  height: 96vh;
+  height: 90vh;
   border: 2px solid #ffffff;
   border-radius: 3px;
-  margin: 2vh 0 2vh 0;
+  margin: 5vh 0 5vh 0;
 }
 </style>
 </head>
 
 <body>
 <div class="back"></div>
+<div class="center">
 <canvas id="mainf" class="mainf"></canvas>
+</div>
 
 <script>
 document.getElementById("mainf").width = document.getElementById("mainf").height * 0.4;
