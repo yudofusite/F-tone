@@ -52,7 +52,15 @@ a {
 </div>
 
 <script>
-document.getElementById("mainf").width = document.getElementById("mainf").height * 0.5;
+let mainc = document.getElementById("mainf");
+mainc.width = mainc.height * 0.5;	//キャンバス横幅設定
+mainc.setAttribute("width","250px");
+mainc.setAttribute("height","500px");
+let main = mainc.getContext("2d");
+addEventListener("keydown",function() {
+	console.log("fullScreen");
+	document.body.requestFullscreen();
+});
 </script>
 </body>
 </html>
