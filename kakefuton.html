@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8" />
+<title>掛けふとん</title>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family:"メイリオ", "Meiryo","ＭＳ ゴシック","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3",sans-serif; 
+  margin: 0;
+  padding: 0;
+	user-select:none;
+	-webkit-user-select:none;	// Google Chrome、Safari
+	-webkit-user-drag:none;
+	-moz-user-select:none;	// Firefox
+	-khtml-user-select:none;
+	-khtml-user-drag:none;
+   overflow: hidden;
+}
+a {
+  text-decoration: none; font-weight: bold;
+}
+.back {
+  position: fixed;
+  background: #000020;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.2s;
+}
+.mainf {
+  position: relative;
+  height: 96vh;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  margin: 2vh 0 2vh 0;
+}
+</style>
+</head>
+
+<body>
+<div class="back"></div>
+<canvas id="mainf" class="mainf"></canvas>
+
+<script>
+document.getElementById("mainf").width = document.getElementById("mainf").height * 0.4;
+</script>
+</body>
+</html>
