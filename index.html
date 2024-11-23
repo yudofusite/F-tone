@@ -57,10 +57,38 @@ mainc.width = mainc.height * 0.5;	//キャンバス横幅設定
 mainc.setAttribute("width","250px");
 mainc.setAttribute("height","500px");
 let main = mainc.getContext("2d");
-addEventListener("click",function() {
+addEventListener("click",function() {		//全画面
 	console.log("fullScreen");
 	document.body.requestFullscreen();
 });
+//------------------------------------------------------------------------------------------
+
+let scene = 0;
+let sc_co = 0;
+setInterval(function() {
+if (scene == 0) {
+title0();
+};
+sc_co++;
+},1000 / 60);
+
+function title0() {
+main.fillStyle = "#00baff";
+main.fillRect(0, 0, 250, 500);
+	if (sc_co < 100) {
+	main.drawImage(logo, 0, (sc_co* 2) - 140);
+	} else {
+	main.drawImage(logo, 0, 60);
+	};
+main.fillStyle = "#000000";
+main.font = "bold 12px sans-serif";
+main.textAlign = "center";
+main.fillText("2024 yudofusite.github", 125, 440);
+main.fillText("湯豆腐過激派-kokesiant", 125, 460);
+};
+
+let logo = new Image();
+logo.src = "kft_logo.png";
 </script>
 </body>
 </html>
