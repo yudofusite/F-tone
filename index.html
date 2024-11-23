@@ -84,11 +84,12 @@ main.fillRect(0, 0, 250, 500);
 	} else {
 	main.drawImage(logo, 0, 60);
 	};
+house_edit();
 main.fillStyle = "#000000";
 main.font = "bold 12px sans-serif";
 main.textAlign = "center";
-main.fillText("2024 yudofusite.github", 125, 440);
-main.fillText("湯豆腐過激派-kokesiant", 125, 460);
+main.fillText("2024 yudofusite.github", 125, 460);
+main.fillText("湯豆腐過激派-kokesiant", 125, 480);
 main.fillStyle = "#ffba00";
 main.font = "bold 18px sans-serif";
 	if (sc_co > 100) {
@@ -98,7 +99,7 @@ main.font = "bold 18px sans-serif";
 		sc_co = 0;
 		};
 	};
-house_edit();
+
 };
 
 function tuto() {
@@ -109,10 +110,19 @@ main.fillRect(0, 0, 250, 500);
 function house_edit() {
 	for (let i = 0; i< 8; i++) {
 	main.fillStyle = "#eeeeee";
-	main.fillRect(50 * i + ((0 - sc_co) % 50) - 25, 400, 25, 30);
+	main.fillRect(50 * i + ((0 - sc_co / 2) % 50) - 25, 400, 25, 30);
 	main.fillStyle = "#0030aa";
-	main.fillRect(50 * i + ((0 - sc_co) % 50) - 17.5, 410, 10, 10);
+	main.fillRect(50 * i + ((0 - sc_co / 2) % 50) - 17.5, 410, 10, 10);
+	main.fillStyle = "#cc0000";
+	main.beginPath();
+	main.moveTo(50 * i + ((0 - sc_co / 2) % 50) - 15 ,385);
+	main.lineTo(50 * i + ((0 - sc_co / 2) % 50) - 30 ,400);
+	main.lineTo(50 * i + ((0 - sc_co / 2) % 50) + 5,400);
+	main.closePath();
+	main.fill();
 	};
+	main.fillStyle = "#005000";
+	main.fillRect(0, 430, 500, 170);
 };
 
 let logo = new Image();
@@ -130,7 +140,7 @@ document.addEventListener("click",function() {
 mouse = 1;
 	setTimeout(function() {
 	mouse = 0;
-	},30);
+	},35);
 });
 </script>
 </body>
