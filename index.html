@@ -98,11 +98,21 @@ main.font = "bold 18px sans-serif";
 		sc_co = 0;
 		};
 	};
+house_edit();
 };
 
 function tuto() {
 main.fillStyle = "#00baff";
 main.fillRect(0, 0, 250, 500);
+};
+
+function house_edit() {
+	for (let i = 0; i< 8; i++) {
+	main.fillStyle = "#eeeeee";
+	main.fillRect(50 * i + ((0 - sc_co) % 50) - 25, 400, 25, 30);
+	main.fillStyle = "#0030aa";
+	main.fillRect(50 * i + ((0 - sc_co) % 50) - 17.5, 410, 10, 10);
+	};
 };
 
 let logo = new Image();
@@ -115,6 +125,12 @@ mouse = 1;
 });
 document.addEventListener("mouseup",function() {
 mouse = 0;
+});
+document.addEventListener("click",function() {
+mouse = 1;
+	setTimeout(function() {
+	mouse = 0;
+	},30);
 });
 </script>
 </body>
