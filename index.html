@@ -69,8 +69,12 @@ setInterval(function() {
 if (scene == 0) {
 title0();
 };
-sc_co++;
-},1000 / 60);
+if (scene == 2) {
+tuto();
+};
+sc_co += 2;
+},1000 / 30);
+
 
 function title0() {
 main.fillStyle = "#00baff";
@@ -85,10 +89,33 @@ main.font = "bold 12px sans-serif";
 main.textAlign = "center";
 main.fillText("2024 yudofusite.github", 125, 440);
 main.fillText("湯豆腐過激派-kokesiant", 125, 460);
+main.fillStyle = "#ffba00";
+main.font = "bold 18px sans-serif";
+	if (sc_co > 100) {
+	main.fillText("タップでスタート", 125, 280);
+		if (mouse == 1) {
+		scene = 2;
+		sc_co = 0;
+		};
+	};
+};
+
+function tuto() {
+main.fillStyle = "#00baff";
+main.fillRect(0, 0, 250, 500);
 };
 
 let logo = new Image();
 logo.src = "kft_logo.png";
+
+let mouse = 0;
+
+document.addEventListener("mousedown",function() {
+mouse = 1;
+});
+document.addEventListener("mouseup",function() {
+mouse = 0;
+});
 </script>
 </body>
 </html>
